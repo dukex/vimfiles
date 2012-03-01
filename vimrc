@@ -62,10 +62,13 @@ let mapleader=","
 let g:CommandTMaxHeight=10
 let g:CommandTMatchWindowAtTop=1
 
-if has("gui_running")
-    "tell the term has 256 colors
-    set t_Co=256
+"tell the term has 256 colors
+set t_Co=256
 
+" set colorscheme default
+colorscheme molokai
+
+if has("gui_running")
     set background=dark
     colorscheme solarized
     set guitablabel=%M%t
