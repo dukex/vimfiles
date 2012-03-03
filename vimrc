@@ -118,3 +118,27 @@ nmap <C-s> :w<CR>
 "key mapping for tab navigation
 nmap <Tab> gt
 nmap <S-Tab> gT
+
+"snipmate setup
+source ~/.vim/snippets/support_functions.vim
+autocmd vimenter * call s:SetupSnippets()
+
+function! s:SetupSnippets()
+  "if filereadable("./config/environment.rb")
+  "  try
+  "    call ExtractSnips("~/.vim/snippets/ruby-rails", "ruby")
+  "    call  ExtractSnips("~/.vim/snippets/eruby-rails", "eruby")
+  "  catch
+  "    call ExtractSnips("~/vimfiles/snippets/ruby-rails", "ruby")
+  "    call ExtractSnips("~/vimfiles/snippets/eruby-rails","eruby")
+  "  endtry
+  "endif
+
+  try
+    call ExtractSnips("~/.vim/snippets/html", "eruby")
+    call ExtractSnips("~/.vim/snippets/html", "xhtml")
+  catch
+    call ExtractSnips("~/vimfiles/snippets/html", "eruby")
+    call ExtractSnips("~/vimfiles/snippets/html", "xhtml")
+  endtry
+endfunction
