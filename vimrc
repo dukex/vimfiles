@@ -64,32 +64,17 @@ let g:CommandTMatchWindowAtTop=1
 
 "tell the term has 256 colors
 set t_Co=256
+set guifont=Monaco:h14
 
-" set colorscheme default
+set background=dark
 colorscheme molokai
+set guitablabel=%M%t
 
-if has("gui_running")
-    set background=dark
-    colorscheme solarized
-    set guitablabel=%M%t
-    set lines=40
-    set columns=115
-
-    if has("gui_gnome")
-        set term=gnome-256color
-        set guifont=Monospace\ Bold\ 12
-    endif
-
-    if has("gui_mac") || has("gui_macvim")
-        set guifont=Monaco:h13
-        let g:solarized_termcolors=256
-        " key binding for Command-T to behave properly
-        " uncomment to replace the Mac Command-T key to Command-T plugin
-        "macmenu &File.New\ Tab key=<nop>
-        map <D-t> :CommandT<CR>
-        " make Mac's Option key behave as the Meta key
-    endif
-endif
+" key binding for Command-T to behave properly
+" uncomment to replace the Mac Command-T key to Command-T plugin
+"macmenu &File.New\ Tab key=<nop>
+map <D-t> :CommandT<CR>
+" make Mac's Option key behave as the Meta key
 
 "map to CommandT TextMate style finder
 nnoremap <leader>t :CommandT<CR>
@@ -135,10 +120,12 @@ function! s:SetupSnippets()
   "endif
 
   try
-    call ExtractSnips("~/.vim/snippets/html", "eruby")
-    call ExtractSnips("~/.vim/snippets/html", "xhtml")
+    call ExtractSnips("~/.vim/bundle/snipmate/snippets/html", "eruby")
+    call ExtractSnips("~/.vim/bundle/snipmate/snippets/html", "xhtml")
   catch
     call ExtractSnips("~/vimfiles/snippets/html", "eruby")
     call ExtractSnips("~/vimfiles/snippets/html", "xhtml")
   endtry
 endfunction
+
+autocmd FileType python set sts=4 sw=4
