@@ -66,8 +66,12 @@ let g:CommandTMatchWindowAtTop=1
 set t_Co=256
 set guifont=Monaco:h14
 
-set background=dark
-colorscheme molokai
+syntax enable
+" set background=dark
+" colorscheme molokai
+set background=light
+colorscheme solarized
+
 set guitablabel=%M%t
 
 " key binding for Command-T to behave properly
