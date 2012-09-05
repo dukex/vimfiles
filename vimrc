@@ -74,14 +74,12 @@ colorscheme solarized
 
 set guitablabel=%M%t
 
-" key binding for Command-T to behave properly
-" uncomment to replace the Mac Command-T key to Command-T plugin
-"macmenu &File.New\ Tab key=<nop>
-map <D-t> :CommandT<CR>
-" make Mac's Option key behave as the Meta key
-
 "map to CommandT TextMate style finder
 nnoremap <leader>t :CommandT<CR>
+
+let g:sparkupExecuteMapping = '<c-s>'
+
+
 
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
