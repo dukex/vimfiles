@@ -40,3 +40,6 @@
 [submodule "bundle/vim-ack"]
 	path = bundle/vim-ack
 	url = git://github.com/mileszs/ack.vim.git
+[submodule "bundle/vim-coffescript"]
+	path = bundle/vim-coffescript
+	url = git://github.com/kchmck/vim-coffee-script.git
