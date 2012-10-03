@@ -134,6 +134,9 @@ function! s:SetupSnippets()
   endtry
 endfunction
 
+" ragtag
+let g:ragtag_global_maps = 1
+
 autocmd FileType python set sts=4 sw=4
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
