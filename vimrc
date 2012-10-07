@@ -58,10 +58,6 @@ set guioptions-=T
 let mapleader=","
 
 
-"Command-T configuration
-let g:CommandTMaxHeight=10
-let g:CommandTMatchWindowAtTop=1
-
 "tell the term has 256 colors
 set t_Co=256
 set guifont=Monaco:h14
@@ -75,7 +71,15 @@ colorscheme solarized
 set guitablabel=%M%t
 
 "map to CommandT TextMate style finder
-nnoremap <leader>t :CommandT<CR>
+
+let g:ctrlp_map = '<c-t>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
+
+nnoremap <leader>t :CtrlP<CR>
+
+
 
 let g:sparkupExecuteMapping = '<c-s>'
 
@@ -131,3 +135,6 @@ function! s:SetupSnippets()
 endfunction
 
 autocmd FileType python set sts=4 sw=4
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
