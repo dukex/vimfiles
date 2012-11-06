@@ -145,3 +145,5 @@ autocmd FileType python set sts=4 sw=4
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+let g:neocomplcache_enable_at_startup = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
