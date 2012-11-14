@@ -80,12 +80,6 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " Linux/MacOSX
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :!bundle<CR>
 
-
-
-let g:sparkupExecuteMapping = '<c-s>'
-
-
-
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 
