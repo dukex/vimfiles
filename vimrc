@@ -60,12 +60,12 @@ let mapleader=","
 
 "tell the term has 256 colors
 set t_Co=256
-set guifont=Monaco:h14
+set guifont=Monaco:h16
 
 syntax enable
 " set background=dark
 " colorscheme molokai
-set background=light
+set background=dark
 colorscheme solarized
 
 set guitablabel=%M%t
@@ -110,23 +110,11 @@ source ~/.vim/snippets/support_functions.vim
 autocmd vimenter * call s:SetupSnippets()
 
 function! s:SetupSnippets()
-  "if filereadable("./config/environment.rb")
-  "  try
-  "    call ExtractSnips("~/.vim/snippets/ruby-rails", "ruby")
-  "    call  ExtractSnips("~/.vim/snippets/eruby-rails", "eruby")
-  "  catch
-  "    call ExtractSnips("~/vimfiles/snippets/ruby-rails", "ruby")
-  "    call ExtractSnips("~/vimfiles/snippets/eruby-rails","eruby")
-  "  endtry
-  "endif
-
   try
     call ExtractSnips("~/.vim/bundle/snipmate/snippets/html", "eruby")
     call ExtractSnips("~/.vim/bundle/snipmate/snippets/html", "xhtml")
     call ExtractSnips("~/.vim/bundle/snipmate/snippets/html", "handlebars")
   catch
-    call ExtractSnips("~/vimfiles/snippets/html", "eruby")
-    call ExtractSnips("~/vimfiles/snippets/html", "xhtml")
   endtry
 endfunction
 
