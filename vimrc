@@ -123,6 +123,7 @@ function! s:SetupSnippets()
   try
     call ExtractSnips("~/.vim/bundle/snipmate/snippets/html", "eruby")
     call ExtractSnips("~/.vim/bundle/snipmate/snippets/html", "xhtml")
+    call ExtractSnips("~/.vim/bundle/snipmate/snippets/html", "handlebars")
   catch
     call ExtractSnips("~/vimfiles/snippets/html", "eruby")
     call ExtractSnips("~/vimfiles/snippets/html", "xhtml")
