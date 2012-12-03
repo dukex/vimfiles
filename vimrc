@@ -60,7 +60,8 @@ let mapleader=","
 
 "tell the term has 256 colors
 set t_Co=256
-set guifont=Monaco:h16
+set guifont=Menlo\ for\ Powerline:h17
+
 
 syntax enable
 " set background=dark
@@ -131,3 +132,5 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+let g:Powerline_symbols = 'fancy'
