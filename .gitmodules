@@ -55,3 +55,9 @@
 [submodule "bundle/vim-zencoding"]
 	path = bundle/vim-zencoding
 	url = http://github.com/mattn/zencoding-vim.git
+[submodule "bundle/vim-jslint"]
+	path = bundle/vim-jslint
+	url = git://github.com/hallettj/jslint.vim.git
+[submodule "bundle/vim-syntastic"]
+	path = bundle/vim-syntastic
+	url = git://github.com/scrooloose/syntastic.git
