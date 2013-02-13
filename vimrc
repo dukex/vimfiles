@@ -44,7 +44,6 @@ set visualbell t_vb=
 
 "statusline setup
 set statusline=%f       "tail of the filename
-
 set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
