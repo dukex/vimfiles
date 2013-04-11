@@ -56,6 +56,11 @@ set guioptions-=T
 " use comma as <Leader> key instead of backslash
 let mapleader=","
 
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
 
 "tell the term has 256 colors
 set t_Co=256
