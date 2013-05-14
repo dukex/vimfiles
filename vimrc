@@ -71,7 +71,7 @@ syntax enable
 " set background=dark
 " colorscheme molokai
 set background=dark
-colorscheme solarized
+colorscheme molokai
 
 set guitablabel=%M%t
 
