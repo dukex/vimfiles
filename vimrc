@@ -127,7 +127,9 @@ endfunction
 let g:ragtag_global_maps = 1
 
 " Running specs from inside vim
-nmap ,s :w<cr> :call RunRSpec()<cr>
+map <Leader>w :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
 
 autocmd FileType python set sts=4 sw=4
 
