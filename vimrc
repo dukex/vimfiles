@@ -95,6 +95,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle 'rking/ag.vim'
 Bundle 'Shougo/neocomplcache'
+Bundle 'mattn/emmet-vim'
 
 
 "map to CommandT TextMate style finder
