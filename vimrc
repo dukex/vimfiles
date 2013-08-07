@@ -3,7 +3,8 @@ filetype on
 filetype off
 
 " load pathogen managed plugins
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
@@ -43,12 +44,15 @@ set linespace=4
 set visualbell t_vb=
 
 "statusline setup
-set statusline=%f       "tail of the filename
-set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
-set statusline+=%l/%L   "cursor line/total lines
-set statusline+=\ %P    "percent through file
+"set statusline=%f       "tail of the filename
+"set statusline+=%=      "left/right separator
+"set statusline+=%c,     "cursor column
+"set statusline+=%l/%L   "cursor line/total lines
+"set statusline+=\ %P    "percent through file
+set statusline=%<%F%h%m%r%h%w%y\ %{&ff}\ %{strftime(\"%c\",getftime(expand(\"%:p\")))}%=\ lin:%l\,%L\ col:%c%V\ pos:%o\ ascii:%b\ %P
+
 set laststatus=2
+
 
 "turn off needless toolbar on gvim/mvim
 set guioptions-=T
@@ -59,7 +63,7 @@ let mapleader=","
 "folding settings
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
-set nofoldenable        "dont fold by default
+"set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 
 "tell the term has 256 colors
@@ -74,6 +78,24 @@ set background=dark
 colorscheme molokai
 
 set guitablabel=%M%t
+
+" Libs
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'hallettj/jslint.vim'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle 'rking/ag.vim'
+Bundle 'Shougo/neocomplcache'
+
 
 "map to CommandT TextMate style finder
 
@@ -90,15 +112,15 @@ let g:syntastic_enable_signs=1
 
 " Strip trailing whitespace
 function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  %s/\s\+$//e
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
@@ -138,4 +160,4 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts = 1
