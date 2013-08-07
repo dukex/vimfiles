@@ -3,7 +3,8 @@ filetype on
 filetype off
 
 " load pathogen managed plugins
-call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
@@ -74,6 +75,22 @@ set background=dark
 colorscheme molokai
 
 set guitablabel=%M%t
+
+" Libs
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'hallettj/jslint.vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'rking/ag.vim'
+Bundle 'Shougo/neocomplcache'
+
 
 "map to CommandT TextMate style finder
 
