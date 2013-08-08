@@ -87,6 +87,7 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'hallettj/jslint.vim'
@@ -96,6 +97,8 @@ Bundle "garbas/vim-snipmate"
 Bundle 'rking/ag.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/emmet-vim'
+Bundle 'scrooloose/syntastic'
+
 
 
 "map to CommandT TextMate style finder
@@ -162,3 +165,5 @@ let g:neocomplcache_enable_at_startup = 1
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let g:airline_powerline_fonts = 1
+
+let g:syntastic_ruby_exec = '~/.rbenv/shims/ruby'
