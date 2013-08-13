@@ -2,11 +2,38 @@
 filetype on
 filetype off
 
+set nocompatible                " choose no compatibility with legacy vi
+
 " load pathogen managed plugins
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-set nocompatible                " choose no compatibility with legacy vi
+
+" Libs
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-fugitive'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'bling/vim-airline'
+Bundle 'kien/ctrlp.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'rking/ag.vim'
+Bundle 'Shougo/neocomplcache'
+Bundle 'mattn/emmet-vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'nono/vim-handlebars'
+Bundle 'nelstrom/vim-markdown-folding'
+Bundle 'jacekd/vim-iawriter'
+Bundle 'laktek/distraction-free-writing-vim'
+Bundle 'kchmck/vim-coffee-script'
+
+filetype plugin indent on       " load file type plugins + indentation
+
+
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
@@ -76,29 +103,6 @@ endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 autocmd FileType python set sts=4 sw=4
-
-" Libs
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-fugitive'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'bling/vim-airline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'rking/ag.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'mattn/emmet-vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'nono/vim-handlebars'
-Bundle 'nelstrom/vim-markdown-folding'
-Bundle 'jacekd/vim-iawriter'
-Bundle 'laktek/distraction-free-writing-vim'
-
-filetype plugin indent on       " load file type plugins + indentation
 
 "map to ControlP TextMate style finder
 let g:ctrlp_map = '<c-t>'
