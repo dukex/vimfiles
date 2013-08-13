@@ -10,7 +10,6 @@ set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
-filetype plugin indent on       " load file type plugins + indentation
 "" Whitespace
 set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
@@ -84,16 +83,22 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-fugitive'
+Bundle 'plasticboy/vim-markdown'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'hallettj/jslint.vim'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
 Bundle 'rking/ag.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'mattn/emmet-vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'nono/vim-handlebars'
+Bundle 'nelstrom/vim-markdown-folding'
+Bundle 'jacekd/vim-iawriter'
+Bundle 'laktek/distraction-free-writing-vim'
+
+filetype plugin indent on       " load file type plugins + indentation
 
 "map to ControlP TextMate style finder
 let g:ctrlp_map = '<c-t>'
@@ -120,3 +125,18 @@ let g:neocomplcache_enable_at_startup = 1
 let g:airline_powerline_fonts = 1
 let g:syntastic_ruby_exec = '~/.rbenv/shims/ruby'
 let g:syntastic_enable_signs=1
+
+
+function! DistractionFreeWriting()
+  colorscheme iawriter
+  set background=light
+  set lines=40 columns=100           " size of the editable area
+  set fuoptions=background:#00f5f6f6 " macvim specific setting for editor's background color
+  set guioptions-=r                  " remove right scrollbar
+  set laststatus=0                   " don't show status line
+  set noruler                        " don't show ruler
+  set nonumber                       " don't show number
+  set fullscreen                     " go to fullscreen editing mode
+  set linebreak                      " break the lines on words
+endfunction
+au BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} call DistractionFreeWriting()
