@@ -8,7 +8,6 @@ set nocompatible                " choose no compatibility with legacy vi
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-
 " Libs
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-endwise'
@@ -75,7 +74,7 @@ set foldlevel=1         "this is just what i use
 "tell the term has 256 colors
 set t_Co=256
 " GUI
-set guifont=Menlo\ for\ Powerline:h17
+set guifont=Anonymous\ Pro\ For\ Powerline:h18
 set background=dark
 colorscheme molokai
 set guitablabel=%M%t
