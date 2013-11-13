@@ -13,10 +13,14 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils' " snipmate
+Bundle 'tomtom/tlib_vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'garbas/vim-snipmate'
 Bundle 'mattn/emmet-vim'
 Bundle 'nono/vim-handlebars'
@@ -25,6 +29,10 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'jgdavey/tslime.vim'
 
 filetype plugin indent on       " load file type plugins + indentation
 
@@ -68,20 +76,22 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 "tell the term has 256 colors
 set t_Co=256
-set guifont=Anonymous\ Pro\ For\ Powerline:h18
+set guifont=Anonymous\ Pro\ For\ Powerline:h22
+set background=dark
 
-if has('gui_running')
-  set background=light
-else
-  set background=dark
-endif
+" solarized options
+" let g:solarized_termtrans = 1
 
-colorscheme molokai
+let g:solarized_termcolors = 256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+colorscheme solarized
+
 set guitablabel=%M%t
 set guioptions-=T "turn off needless toolbar on gvim/mvim
 
 " Mapping
-nnoremap <leader>b :!bundle<CR>
+nnoremap <leader>b :call Send_to_Tmux("bundle\n")<CR>
 nmap <C-s> :w<CR>
 nmap <Tab> gt
 nmap <S-Tab> gT
@@ -132,3 +142,12 @@ inoremap <c-x><c-]> <c-]>
 
 let g:vimrubocop_keymap = 0
 nmap <Leader>r :RuboCop<CR>
+
+" vim-rspec mappings
+map <Leader>c :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
