@@ -77,7 +77,7 @@ set nofoldenable        "dont fold by default
 set foldlevel=1         "this is just what i use
 "tell the term has 256 colors
 set t_Co=256
-set guifont=Anonymous\ Pro\ For\ Powerline:h22
+set guifont=CosmicSansNeueMono:h22
 set background=dark
 
 " solarized options
@@ -149,6 +149,5 @@ map <Leader>c :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
 
 let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
