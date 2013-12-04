@@ -33,6 +33,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'jgdavey/tslime.vim'
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on       " load file type plugins + indentation
 
