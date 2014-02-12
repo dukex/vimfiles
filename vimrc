@@ -29,11 +29,13 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'StanAngeloff/php.vim'
 Bundle 'ngmy/vim-rubocop'
 Bundle 'Blackrush/vim-gocode'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'jgdavey/tslime.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-scripts/fountain.vim'
+Bundle 'chriskempson/base16-vim'
+
 
 filetype plugin indent on       " load file type plugins + indentation
 
@@ -80,13 +82,7 @@ set t_Co=256
 set guifont=CosmicSansNeueMono:h22
 set background=dark
 
-" solarized options
-" let g:solarized_termtrans = 1
-
-let g:solarized_termcolors = 256
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
+colorscheme base16-eighties
 
 set guitablabel=%M%t
 set guioptions-=T "turn off needless toolbar on gvim/mvim
